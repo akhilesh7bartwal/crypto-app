@@ -17,7 +17,9 @@ const Exchanges = () => {
 
   return (
     <>
-      <Row>
+        This API is not working.
+        <p>Sorry for the inconvenience</p>
+      {/* <Row>
         <Col span={6}>Exchanges</Col>
         <Col span={6}>24h Trade Volume</Col>
         <Col span={6}>Markets</Col>
@@ -48,7 +50,7 @@ const Exchanges = () => {
             </Collapse>
           </Col>
         ))}
-      </Row>
+      </Row> */}
     </>
   );
 };
