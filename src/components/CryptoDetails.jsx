@@ -18,7 +18,7 @@ const CryptoDetails = ()=>{
     const {data: coinHistory} = useGetCryptoHistoryQuery({coinId, timePeriod});
     //console.log(data);
     //console.log(`coin: ${coinHistory}`)
-
+    
     const cryptoDetails = data?.data?.coin;
     console.log(cryptoDetails);
     if(isFetching)
@@ -27,10 +27,10 @@ const CryptoDetails = ()=>{
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
     const stats = [
-      { title: 'Price to USD', value: `$ ${cryptoDetails.price && millify(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
+      { title: 'Price to USD', value: `$ ${millify(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
       { title: 'Rank', value: cryptoDetails.rank, icon: <NumberOutlined /> },
-      { title: '24h Volume', value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume)}`, icon: <ThunderboltOutlined /> },
-      { title: 'Market Cap', value: `$ ${cryptoDetails.marketCap && millify(cryptoDetails.marketCap)}`, icon: <DollarCircleOutlined /> },
+      { title: '24h Volume', value: `$ ${millify(cryptoDetails['24hVolume'])}`, icon: <ThunderboltOutlined /> },
+      { title: 'Market Cap', value: `$ ${millify(cryptoDetails.marketCap)}`, icon: <DollarCircleOutlined /> },
       { title: 'All-time-high(daily avg.)', value: `$ ${millify(cryptoDetails.allTimeHigh.price)}`, icon: <TrophyOutlined /> },
     ];
   
